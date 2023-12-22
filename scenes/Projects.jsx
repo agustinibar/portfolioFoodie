@@ -1,5 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import enTranslations from '../english';
+import esTranslations from '../spanish';
 
 const container = {
   hidden: {},
@@ -15,18 +17,17 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ({ title, description, language }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
-
+  const translation = language === "english" ? enTranslations : esTranslations;
   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
+        <p className="text-2xl font-playfair">{description}</p>
         <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
+        {translation.contactCTA}
         </p>
       </div>
       <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
@@ -34,9 +35,11 @@ const Project = ({ title }) => {
   );
 };
 
-const Projects = () => {
+const Projects = ({ language }) => {
+  const translation = language === "english" ? enTranslations : esTranslations;
+
   return (
-    <section id="projects" className="pt-48 pb-48">
+    <section id="proyectos" className="pt-32 pb-20">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"
@@ -51,16 +54,14 @@ const Projects = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-red">PRO</span>JECTS
+            <span className="text-red">{translation.pro}</span>{translation.yects}
           </p>
           <div className="flex justify-center mt-5">
             <LineGradient width="w-2/3" />
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
-          purus nec eget eleifend ut elit.
+         {translation.projectsSubtitle}
         </p>
       </motion.div>
 
@@ -78,24 +79,24 @@ const Projects = () => {
             className="flex justify-center text-center items-center p-10 bg-red
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            BEAUTIFUL USER INTERFACES
+            {translation.uiProjectCategory}
           </div>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
+          <Project title="Project 1" description={translation.project1Description} language={language}/>
+          <Project title="Project 2" description={translation.project2Description} language={language}/>
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
+          <Project title="Project 3" description={translation.project3Description} language={language}/>
+          <Project title="Project 4" description={translation.project4Description} language={language}/>
+          <Project title="Project 5" description={translation.project5Description} language={language}/>
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          <Project title="Project 6" description={translation.project6Description} language={language}/>
+          <Project title="Project 7" description={translation.project7Description} language={language}/>
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            SMOOTH USER EXPERIENCE
+            {translation.adminPanelProjectCategory}
           </div>
         </motion.div>
       </div>

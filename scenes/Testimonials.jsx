@@ -1,9 +1,12 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import enTranslations from '../english';
+import esTranslations from '../spanish';
 
-const Testimonials = () => {
+const Testimonials = ({ language }) => {
+  const translation = language === "english" ? enTranslations : esTranslations;
   return (
-    <section id="testimonials" className="pt-32 pb-16">
+    <section id="newsletter" className="pt-32 pb-16">
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
@@ -17,20 +20,18 @@ const Testimonials = () => {
         }}
       >
         <p className="font-playfair font-semibold text-4xl mb-5 text-red">
-          TESTIMONIALS
+          {translation.newsletterTitle}
         </p>
         <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
-          Here's What People are Saying About My Work. Aliquam aliquet integer
-          ut fames odio in at. At magna ornare dictum lectus.
+          {translation.newsletterSubtitle}
         </p>
       </motion.div>
 
       {/* TESTIMONIALS */}
-      <div className="md:flex md:justify-between gap-8">
+      <div className="md:flex md:justify-between ">
         <motion.div
-          className="mx-auto relative bg-blue max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
-            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person1"
+          className="mx-auto relative bg-blue max-w-[400px] h-[500px] flex flex-col justify-center p-16 pt-12 mt-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -40,15 +41,16 @@ const Testimonials = () => {
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">“</p>
+          <h3 className="text-center text-xl font-bold mb-6">
+            {translation.article1Title}
+          </h3>
           <p className="text-center text-xl">
-            A auctor pharetra hendrerit mattis amet etiam interdum platea.
+            {translation.article1Content}
           </p>
         </motion.div>
 
         <motion.div
-          className="mx-auto relative bg-red max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
-            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person2"
+          className="mx-auto relative bg-red max-w-[400px] h-[500px] flex flex-col justify-start p-16 pt-6 mt-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -58,16 +60,16 @@ const Testimonials = () => {
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">“</p>
+          <h3 className="text-center text-xl font-bold mb-6">
+           {translation.article2Title}
+          </h3>
           <p className="text-center text-xl">
-            Aliquam aliquet integer ut fames odio in at. At magna ornare dictum
-            lectus.
+            {translation.article2Content}
           </p>
         </motion.div>
 
         <motion.div
-          className="mx-auto relative bg-yellow max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
-            before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-person3"
+          className="mx-auto relative bg-yellow max-w-[400px] h-[500px] flex flex-col justify-start p-16 pt-6 mt-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -77,9 +79,11 @@ const Testimonials = () => {
             visible: { opacity: 1, scale: 1 },
           }}
         >
-          <p className="font-playfair text-6xl">“</p>
+          <h3 className="text-center text-xl font-bold mb-6">
+            {translation.article3Title}
+          </h3>
           <p className="text-center text-xl">
-            Fames odio in at. At magna ornare dictum lectus.
+            {translation.article3Content}
           </p>
         </motion.div>
       </div>
