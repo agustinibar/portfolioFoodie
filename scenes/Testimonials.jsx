@@ -2,11 +2,12 @@ import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import enTranslations from '../english';
 import esTranslations from '../spanish';
+import { NavLink } from "react-router-dom";
 
 const Testimonials = ({ language }) => {
   const translation = language === "english" ? enTranslations : esTranslations;
   return (
-    <section id="newsletter" className="pt-32 pb-16">
+    <section id="noticias" className="pt-32 pb-16">
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
@@ -19,9 +20,11 @@ const Testimonials = ({ language }) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
+        <NavLink to={`/newsletter`}>
         <p className="font-playfair font-semibold text-4xl mb-5 text-red">
           {translation.newsletterTitle}
         </p>
+        </NavLink>
         <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
           {translation.newsletterSubtitle}
