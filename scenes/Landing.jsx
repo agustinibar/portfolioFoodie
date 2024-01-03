@@ -14,7 +14,7 @@ const Landing = ({ setSelectedPage, language }) => {
 
   return (
     <section
-      id="home"
+      id={translation.homeNavbar}
       className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
     >
       {/* IMAGE SECTION */}

@@ -1,6 +1,6 @@
 import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
-import { motion } from "framer-motion";
+import { motion, transform } from "framer-motion";
 import enTranslations from '../english';
 import esTranslations from '../spanish';
 
@@ -9,7 +9,7 @@ const MySkills = ({ language }) => {
   const translation = language === "english" ? enTranslations : esTranslations;
 
   return (
-    <section id="nuestro equipo" className="pt-10 pb-24">
+    <section id={translation.ourTeamNavbar} className="pt-10 pb-24">
       {/* HEADER AND IMAGE SECTION */}
       <div className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div

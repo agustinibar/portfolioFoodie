@@ -39,7 +39,7 @@ const Projects = ({ language }) => {
   const translation = language === "english" ? enTranslations : esTranslations;
 
   return (
-    <section id="proyectos" className="pt-32 pb-20">
+    <section id={translation.proyectsNavbar} className="pt-32 pb-20">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"

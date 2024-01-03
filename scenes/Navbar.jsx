@@ -5,7 +5,7 @@ import enTranslations from '../english';
 import esTranslations from '../spanish';
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
-  const lowerCasePage = page.toLowerCase();
+  const lowerCasePage = page;
 
   return (
     <AnchorLink
@@ -86,7 +86,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage,  language, setLang
             {/* MENU ITEMS */}
             <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
               <Link
-                page="Home"
+                page="Inicio"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
@@ -101,7 +101,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage,  language, setLang
                 setSelectedPage={setSelectedPage}
               />
               <Link
-                page="Newsletter"
+                page="Noticias"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />

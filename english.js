@@ -38,6 +38,24 @@ const translations = {
     ourTeamNavbar: "Our Team",
     proyectsNavbar: "Proyects",
     newsletterNavbar:"Newsletter",
-    contactNavbar: "Contact"
+    contactNavbar: "Contact",
+    firstHaeding: "CONTACT US",
+    secondHeading: "TO GET STARTED",
+    namePlaceholder: "NAME",
+    emailPlaceholder: "EMAIL",
+    messagePlaceholder: "MESSAGE",
+    nameError: {
+      required: "This field is required.",
+      maxLength: "Max length is 100 char.",
+    },
+    emailError: {
+      required: "This field is required.",
+      pattern: "Invalid email address.",
+    },
+    messageError: {
+      required: "This field is required.",
+      maxLength: "Max length is 2000 char.",
+    },
+    sendButton: "SEND",
   };
 export default translations;

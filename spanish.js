@@ -38,7 +38,25 @@ const translations = {
     ourTeamNavbar: "Nuestro Equipo",
     proyectsNavbar: "Proyectos",
     newsletterNavbar:"Noticias",
-    contactNavbar: "Contacto"
+    contactNavbar: "Contacto",
+    firstHaeding: "CONTÁCTANOS",
+    secondHeading: "PARA EMPEZAR",
+    namePlaceholder: "NOMBRE",
+    emailPlaceholder: "CORREO ELECTRÓNICO",
+    messagePlaceholder: "MENSAJE",
+    nameError: {
+      required: "Este campo es obligatorio.",
+      maxLength: "Longitud máxima es de 100 caracteres.",
+    },
+    emailError: {
+      required: "Este campo es obligatorio.",
+      pattern: "Dirección de correo electrónico no válida.",
+    },
+    messageError: {
+      required: "Este campo es obligatorio.",
+      maxLength: "Longitud máxima es de 2000 caracteres.",
+    },
+    sendButton: "ENVIAR",
   };
 export default translations;
   

@@ -1,8 +1,11 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import enTranslations from "../english";
+import esTranslations from "../spanish";
 
-const Contact = () => {
+const Contact = ({  language  }) => {
+  const translation = language === "english" ? enTranslations : esTranslations;
   const {
     register,
     trigger,
@@ -18,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="contact py-28">
+    <section id={translation.contactNavbar} className="contact py-28">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -33,7 +36,7 @@ const Contact = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow">CONTACT US</span> TO GET STARTED
+            <span className="text-yellow">{translation.firstHaeding} </span> {translation.secondHeading}
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -77,7 +80,7 @@ const Contact = () => {
             <input
               className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
               type="text"
-              placeholder="NAME"
+              placeholder={translation.namePlaceholder}
               {...register("name", {
                 required: true,
                 maxLength: 100,
@@ -85,15 +88,15 @@ const Contact = () => {
             />
             {errors.name && (
               <p className="text-red mt-1">
-                {errors.name.type === "required" && "This field is required."}
-                {errors.name.type === "maxLength" && "Max length is 100 char."}
+                {errors.name.type === "required" && translation.nameError.required}
+                {errors.name.type === "maxLength" && translation.nameError.maxLength}
               </p>
             )}
 
             <input
               className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
               type="text"
-              placeholder="EMAIL"
+              placeholder={translation.emailPlaceholder}
               {...register("email", {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -101,15 +104,15 @@ const Contact = () => {
             />
             {errors.email && (
               <p className="text-red mt-1">
-                {errors.email.type === "required" && "This field is required."}
-                {errors.email.type === "pattern" && "Invalid email address."}
+                {errors.email.type === "required" && translation.emailError.required}
+                {errors.email.type === "pattern" && translation.emailError.pattern}
               </p>
             )}
 
             <textarea
               className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
               name="message"
-              placeholder="MESSAGE"
+              placeholder={translation.messagePlaceholder}
               rows="4"
               cols="50"
               {...register("message", {
@@ -120,9 +123,9 @@ const Contact = () => {
             {errors.message && (
               <p className="text-red mt-1">
                 {errors.message.type === "required" &&
-                  "This field is required."}
+                  translation.messageError.required}
                 {errors.message.type === "maxLength" &&
-                  "Max length is 2000 char."}
+                  translation.messageError.maxLength}
               </p>
             )}
 
@@ -130,7 +133,7 @@ const Contact = () => {
               className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
-              SEND
+              {translation.sendButton}
             </button>
           </form>
         </motion.div>
