@@ -2,14 +2,13 @@ import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { Link } from "react-router-dom";
+import esTranslations from '../../spanish';
+import enTranslations from '../../english';
 
-
-
-
-const NoLandingNavbar = ({ lenguage, setLanguage }) => {
+const NoLandingNavbar = ({ language, setLanguage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-
+  const translation = language === 'english' ? enTranslations : esTranslations;
 
   return (
     <nav className={`bg-red z-40 w-full fixed top-0 py-6`}>
@@ -25,6 +24,9 @@ const NoLandingNavbar = ({ lenguage, setLanguage }) => {
                 </div>
                 <Link to={`/`}>
                     <button>Home</button>
+                </Link>
+                <Link to={`/newsletter`}>
+                    <button>Newsletter's</button>
                 </Link>
         </div>
         ) : (
@@ -50,6 +52,9 @@ const NoLandingNavbar = ({ lenguage, setLanguage }) => {
             <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
                 <Link to={`/`}>
                     <button>Home</button>
+                </Link>
+                <Link to={`/newsletter`}>
+                    <button>Newsletter's</button>
                 </Link>
                 <div className="flex gap-4">
                   <button onClick={() => setLanguage('spanish')}>🇪🇸</button>

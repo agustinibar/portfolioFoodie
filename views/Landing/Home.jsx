@@ -42,7 +42,7 @@ export const Home = () => {
         <DotGroup
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
-        
+        language={language}
         />
     )}
     <motion.div
@@ -74,11 +74,11 @@ export const Home = () => {
     </motion.div>
     </div>
     <LineGradient />
-    <div className="w-5/6 mx-auto md:h-full mb-80 ">
+    <div className="w-5/6 mx-auto md:h-full mb-96">
     <motion.div
         margin="0 0 -200px 0"
         amount="all"
-        onViewportEnter={() => setSelectedPage("testimonials")}
+        onViewportEnter={() => setSelectedPage("newsletter")}
     >
     <Testimonials language={language}/>
     </motion.div>

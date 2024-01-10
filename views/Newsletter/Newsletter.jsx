@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LineGradient from "../../components/LineGradient";
 import { motion } from "framer-motion";
 import enTranslations from '../../english';
@@ -7,7 +7,8 @@ import { NavLink } from "react-router-dom";
 import NoLandingNavbar from "../../components/Navbar/NoLandingNavbar";
 import Footer from "../../scenes/Footer";
 
-const Newsletter = ({ language }) => {
+const Newsletter = () => {
+  const [language, setLanguage] = useState('spanish')
   const translation = language === "english" ? enTranslations : esTranslations;
 
   const newsletters = [
@@ -31,7 +32,10 @@ const Newsletter = ({ language }) => {
   return (
     <>
     <section id="newsletter" className="pt-20 pb-20 bg-deep-blue">
-    <NoLandingNavbar/>
+    <NoLandingNavbar
+    language={language}
+    setLanguage={setLanguage}
+    />
       {/* HEADING */}
       <motion.div
         className="md:w-2/3 mx-auto text-center mt-10"

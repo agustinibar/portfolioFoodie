@@ -7,9 +7,9 @@ import Footer from '../../scenes/Footer';
 export const NewOne = () => {
     
     return (
-        <section className="bg-deep-blue text-white py-16">
+        <section className="bg-deep-blue text-white pt-16">
           <NoLandingNavbar />
-          <div className="container mx-auto text-left mt-10">
+          <div className="container mx-auto text-left mt-10 mb-6">
             <h2 className="text-5xl font-playfair font-semibold mb-6">
               Google Revoluciona la Búsqueda en Línea con Innovadores Algoritmos de Experiencia del Usuario
             </h2>

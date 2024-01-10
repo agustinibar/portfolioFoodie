@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const Testimonials = ({ language }) => {
   const translation = language === "english" ? enTranslations : esTranslations;
   return (
-    <section id={translation.newsletterNavbar} className="pt-32 pb-16">
+    <section id={translation.newsletterNavbar} className="pt-16">
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
